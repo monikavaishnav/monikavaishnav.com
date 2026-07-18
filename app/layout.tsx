@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, Lora, Caveat, Dancing_Script } from "next/font/google";
+import { Fraunces, Inter, Lora, Caveat } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 
@@ -33,13 +33,6 @@ const caveat = Caveat({
   display: "swap",
 });
 
-const dancingScript = Dancing_Script({
-  subsets: ["latin"],
-  weight: ["600", "700"],
-  variable: "--font-dancing-script",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   title: "Monika Vaishnav — Creative Portfolio",
   description: "Brand strategist & story-first thinker — brand strategy, GTM planning, and campaign work.",
@@ -53,7 +46,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${inter.variable} ${lora.variable} ${caveat.variable} ${dancingScript.variable}`}
+      className={`${fraunces.variable} ${inter.variable} ${lora.variable} ${caveat.variable}`}
     >
       <body>
         <Navbar />

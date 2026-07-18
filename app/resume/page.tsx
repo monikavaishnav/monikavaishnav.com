@@ -21,16 +21,16 @@ export default function ResumePage() {
           <span className={styles.resumeEyebrow}>CV · MARKETING · MBA</span>
           <h2 className={styles.resumeTitle}>Monika Vaishnav</h2>
           <p className={styles.resumeText}>
-            A motivated MBA (Marketing) graduate with hands-on experience in market research, consumer
-            insight and go-to-market strategy, backed by strong communication, analytical and
-            problem-solving skills. I turn customer understanding into effective marketing decisions, and
-            I&apos;m looking for a growth-focused team where I can contribute to brand positioning and business
-            growth.
+            I started in pharmaceutical sciences — an M.Pharma in pharmaceutical chemistry — before
+            pivoting into brand marketing through an MBA. That path gave me a research-first instinct
+            most marketers don&apos;t have: I turn consumer and market data into positioning, go-to-market
+            strategy, and campaigns people actually respond to. I&apos;m looking for a growth-focused team
+            where I can bring that same rigour to brand building.
           </p>
           <div className={styles.resumeMeta}>
-            <span className={styles.resumeMetaItem}>📍 Bengaluru, Karnataka</span>
-            <span className={styles.resumeMetaItem}>🎓 MBA — Marketing, ICFAI Business School (2027)</span>
-            <span className={styles.resumeMetaItem}>💬 English · Hindi</span>
+            <span className={styles.resumeMetaItem}>Bengaluru, Karnataka</span>
+            <span className={styles.resumeMetaItem}>MBA — Marketing, ICFAI Business School (2027)</span>
+            <span className={styles.resumeMetaItem}>English · Hindi</span>
           </div>
           <div className={styles.resumeActions}>
             <a href="/assets/monika-resume.pdf" className={styles.resumeBtn} target="_blank" rel="noopener">View / Download PDF&nbsp;↗</a>
@@ -240,7 +240,7 @@ export default function ResumePage() {
         </div>
       </main>
 
-      <Footer variant="dark" />
+      <Footer />
     </div>
   );
 }
