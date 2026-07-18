@@ -10,14 +10,11 @@ const NAV_LINKS = [
   { href: "/resume", label: "Resume", newTab: true },
 ];
 
-// Each page had its own recolored navbar via a body class in the old site
-// (.home .navbar, .resume-page .navbar, .theme-clay .nav-logo, .makhana-page
-// .navbar, ...). Centralized here instead of scattered across 4 stylesheets —
-// boAt's pages never overrode the navbar, so they fall through to default.
+// The portfolio shell (Home, Projects, Resume) all share one navbar style now.
+// Makhana keeps its own distinct navbar — it's a separate branded case study,
+// out of scope for the portfolio revamp. boAt has no override, so it falls
+// through to the shared default.
 function getVariant(pathname: string): string {
-  if (pathname === "/") return styles.navHome;
-  if (pathname.startsWith("/resume")) return styles.navResume;
-  if (pathname.startsWith("/projects")) return styles.navClay;
   if (pathname.startsWith("/work/makhana")) return styles.navMakhana;
   return "";
 }
