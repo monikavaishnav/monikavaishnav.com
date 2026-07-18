@@ -220,7 +220,9 @@
       <!-- Card 1: मaka Makhana (live project) -->
       <a href="makhana.html" class="fw-card">
         <div class="fw-thumb fw-thumb--maka">
-          <img src="assets/maka-regular-himalayan.png" alt="मaka Makhana — Himalayan Pink Salt packaging" />
+          <div class="fw-preview">
+            <iframe src="makhana.html" title="Makhana Brand Launch — live preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
         </div>
         <div class="fw-info">
           <span class="fw-tag">GTM Strategy · Brand Campaign</span>
@@ -233,8 +235,9 @@
       <!-- Card 2: boAt — Turn It Down (live project) -->
       <a href="boat-analysis.html" class="fw-card">
         <div class="fw-thumb fw-thumb--boat">
-          <span class="fw-boat-word"><span class="fw-boat-b">b</span><span class="fw-boat-o">O</span><span class="fw-boat-at">At</span></span>
-          <span class="fw-boat-tagline">turn it down</span>
+          <div class="fw-preview">
+            <iframe src="boat-analysis.html" title="boAt — Turn It Down — live preview" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          </div>
         </div>
         <div class="fw-info">
           <span class="fw-tag">Campaign Analysis · Marketing</span>
@@ -243,18 +246,6 @@
           <span class="fw-link">VIEW PROJECT →</span>
         </div>
       </a>
-
-      <!-- Card 3: placeholder -->
-      <div class="fw-card fw-card--dim">
-        <div class="fw-thumb fw-thumb--c">
-          <span class="fw-thumb-soon">COMING SOON</span>
-        </div>
-        <div class="fw-info">
-          <span class="fw-tag" style="opacity:0.5;">Campaign</span>
-          <h3 class="fw-title">Next Project</h3>
-          <p class="fw-desc">More work being added soon.</p>
-        </div>
-      </div>
 
     </div>
   </section>
@@ -338,57 +329,9 @@
       }, 1600);
     })();
 
-    (function () {
-      const container = document.querySelector('.intro-bio');
-      if (!container) return;
-      const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
-      const textNodes = [];
-      while (walker.nextNode()) textNodes.push(walker.currentNode);
-      textNodes.forEach((node) => {
-        if (!node.textContent.trim()) return;
-        const frag = document.createDocumentFragment();
-        node.textContent.split(/(\s+)/).forEach((part) => {
-          if (part === '') return;
-          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
-          const s = document.createElement('span');
-          s.className = 'reveal-word';
-          s.textContent = part;
-          frag.appendChild(s);
-        });
-        node.parentNode.replaceChild(frag, node);
-      });
-      const words = container.querySelectorAll('.reveal-word');
-      let scheduled = false;
-      const update = () => {
-        scheduled = false;
-        const vh = window.innerHeight;
-        const fadeStart = vh * 0.85;
-        const fadeEnd = vh * 0.42;
-        words.forEach((w) => {
-          const top = w.getBoundingClientRect().top;
-          let p = (fadeStart - top) / (fadeStart - fadeEnd);
-          p = Math.max(0, Math.min(1, p));
-          const r = Math.round(120 + (239 - 120) * p);
-          const g = Math.round(70  + (232 - 70)  * p);
-          const b = Math.round(68  + (223 - 68)  * p);
-          w.style.color = 'rgb(' + r + ',' + g + ',' + b + ')';
-        });
-      };
-      const onScroll = () => {
-        update();
-        if (!scheduled && window.requestAnimationFrame) {
-          scheduled = true;
-          window.requestAnimationFrame(update);
-        }
-      };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', onScroll);
-      update();
-    })();
-
     /* Word spotlight: wrap each word in a span so it can light up on hover */
     (function () {
-      const SKIP = /(hl-marker|hl-box|hl-underline|hl-double|reveal-word|glow-word)/;
+      const SKIP = /(hl-marker|hl-box|hl-underline|hl-double|glow-word)/;
       const hasSkipAncestor = (node, root) => {
         let el = node.parentElement;
         while (el && el !== root.parentNode) {

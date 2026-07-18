@@ -65,14 +65,6 @@ body {
   letter-spacing: 0;
 }
 
-/* Scroll-reveal words in the hero bio (grey -> black on scroll) */
-.reveal-word {
-  display: inline-block;
-  color: rgb(186, 181, 172);
-  transition: color 0.12s linear;
-  will-change: color;
-}
-
 /* small all-caps UI labels stay in the clean sans */
 .eyebrow,
 .nav-link,
@@ -106,16 +98,14 @@ footer {
 }
 
 /* ── Word spotlight: each word lights up with a small yellow glow on hover ── */
-.glow-word,
-.reveal-word {
+.glow-word {
   border-radius: 5px;
   padding: 0.02em 0.14em;
   margin: 0 -0.14em;
   transition: background 0.16s ease, box-shadow 0.16s ease, color 0.16s ease;
 }
 
-.glow-word:hover,
-.reveal-word:hover {
+.glow-word:hover {
   background: radial-gradient(ellipse at center,
     rgba(255, 226, 130, 0.95) 0%,
     rgba(255, 219, 110, 0.55) 60%,
@@ -126,8 +116,7 @@ footer {
 
 /* no hover glow on touch devices */
 @media (hover: none) {
-  .glow-word:hover,
-  .reveal-word:hover { background: none; box-shadow: none; color: inherit !important; }
+  .glow-word:hover { background: none; box-shadow: none; color: inherit !important; }
 }
 
 /* ── NAVBAR ── */
@@ -726,7 +715,7 @@ footer {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 3.5rem 2.5rem;
 }
 
@@ -940,7 +929,6 @@ footer {
 .home .intro-name-accent { color: var(--tan); }
 .home .intro-brand { color: var(--alabaster); opacity: 0.85; }
 .home .intro-bio p { color: var(--alabaster); }
-.home .intro-bio .reveal-word { color: rgb(120, 70, 68); } /* matches the scroll-reveal JS's dim start color on the maroon bg */
 .home .intro-bio strong { color: var(--tan); }
 .home .intro-arrow { color: var(--tan); }
 
@@ -1163,7 +1151,7 @@ footer {
 
 .featured-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   align-items: stretch;
 }
@@ -1196,46 +1184,28 @@ a.fw-card:hover {
 }
 
 .fw-thumb--maka { background: #F5C518; }
-.fw-thumb--maka img {
-  height: 100%;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-}
-
-.fw-thumb--b { background: #D8BA98; }
-.fw-thumb--c { background: #96C0CE; }
 
 .fw-thumb--boat {
-  background:
-    radial-gradient(70% 70% at 78% 22%, rgba(231,28,36,0.30), transparent 60%),
-    linear-gradient(160deg, #17171B, #0C0C0E);
-  flex-direction: column;
-  gap: 0.4rem;
+  background: linear-gradient(160deg, #17171B, #0C0C0E);
 }
 
-.fw-boat-word {
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
-  font-size: 2.1rem;
-  color: #F5F2EC;
-  line-height: 1;
+/* live, non-interactive preview of the linked project page, scaled to fit the thumb */
+.fw-preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
 }
-.fw-boat-word .fw-boat-o { color: #E71C24; }
-
-.fw-boat-tagline {
-  font-family: 'Caveat', cursive;
-  font-size: 1.5rem;
-  color: #E71C24;
-  line-height: 1;
-}
-
-.fw-thumb-soon {
-  font-family: var(--font-body);
-  font-size: 0.58rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  color: rgba(33,31,29,0.28);
+.fw-preview iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 400%;
+  border: 0;
+  transform: scale(0.25);
+  transform-origin: top left;
 }
 
 .fw-info {
@@ -1280,23 +1250,16 @@ a.fw-card:hover {
   padding-top: 0.9rem;
 }
 
-.fw-card--dim { opacity: 0.55; }
-
-@media (max-width: 900px) {
-  .featured-cards { grid-template-columns: 1fr 1fr; }
-  .fw-card--dim:last-child { display: none; }
-}
 @media (max-width: 600px) {
   .featured-work { padding: 3rem 1.5rem; }
   .featured-work-hd { flex-direction: column; align-items: flex-start; gap: 0.9rem; }
   .featured-cards { grid-template-columns: 1fr; }
-  .fw-card--dim { display: none; }
 }
 
 /* ── Home page beach-house palette overrides for new sections ── */
 .home .intro-positioning {
-  color: var(--midnight);
-  border-left-color: var(--maroon);
+  color: var(--tan);
+  border-left-color: var(--tan);
 }
 
 .home .featured-work { background: var(--maroon); }
@@ -1309,4 +1272,3 @@ a.fw-card:hover {
 .home .fw-title { color: var(--midnight); }
 .home .fw-desc { color: rgba(15,65,74,0.7); }
 .home .fw-link { color: var(--maroon); }
-.home .fw-thumb-soon { color: rgba(15,65,74,0.32); }
