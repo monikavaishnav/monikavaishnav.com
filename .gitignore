@@ -1,3 +1,17 @@
 .DS_Store
 .claude/
 .lavish/
+
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+*.tsbuildinfo
+next-env.d.ts
+
+# misc
+*.pem
+npm-debug.log*
+.env*
