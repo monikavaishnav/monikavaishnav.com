@@ -3,19 +3,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.8rem 4rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(42, 38, 32, 0.12);
   font-family: var(--font-body);
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
-}
-
-.footerDark {
-  background: var(--midnight);
-  color: var(--tan);
-  border-top: none;
 }
 
 @media (max-width: 768px) {

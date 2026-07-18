@@ -3,10 +3,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.3rem 4rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(42, 38, 32, 0.12);
   position: sticky;
   top: 0;
-  background: var(--light-bg);
+  background: var(--paper);
   z-index: 100;
 }
 
@@ -14,7 +14,7 @@
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.4rem;
-  color: var(--accent);
+  color: var(--moss);
   text-decoration: none;
   letter-spacing: 0.02em;
 }
@@ -38,7 +38,7 @@
 
 .link:hover,
 .linkActive {
-  color: var(--accent);
+  color: var(--moss);
 }
 
 @media (max-width: 768px) {
@@ -53,19 +53,8 @@
   .link { font-size: 0.64rem; letter-spacing: 0.06em; }
 }
 
-/* ── Per-page navbar recolors (ported from the old body-class overrides:
-   .resume-page .navbar, .theme-clay .nav-logo, .makhana-page .navbar) ── */
-.navResume {
-  background: var(--alabaster);
-  border-bottom-color: rgba(15, 65, 74, 0.16);
-}
-.navResume .logo { color: var(--maroon); }
-.navResume .link { color: var(--midnight); opacity: 0.72; }
-.navResume .link:hover,
-.navResume .linkActive { color: var(--maroon); opacity: 1; }
-
-.navClay .logo { color: var(--clay); }
-
+/* ── Makhana keeps its own distinct navbar (separate branded project,
+   out of scope for the portfolio revamp) ── */
 .navMakhana {
   background: #FFFCF0;
   border-bottom-color: rgba(0, 0, 0, 0.1);
@@ -74,49 +63,3 @@
 .navMakhana .link { color: #5a5240; }
 .navMakhana .link:hover,
 .navMakhana .linkActive { color: #2B6B3E; }
-
-/* Home page: iOS-26 "liquid glass" navbar — translucent + blurred, not a solid
-   tint, so the maroon/tan section colors scroll underneath it instead of being
-   hidden. Brightens slightly when the portrait-hero lamp is toggled on. */
-.navHome {
-  background: linear-gradient(180deg, rgba(255,255,255,0.34), rgba(255,255,255,0.09));
-  backdrop-filter: blur(22px) saturate(190%);
-  -webkit-backdrop-filter: blur(22px) saturate(190%);
-  border-bottom: 1px solid rgba(255,255,255,0.16);
-  box-shadow:
-    0 8px 24px rgba(0,0,0,0.16),
-    inset 0 1px 0 rgba(255,255,255,0.65),
-    inset 0 -1px 0 rgba(255,255,255,0.06);
-  transition: background 0.9s ease;
-  position: relative;
-}
-.navHome::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(115deg,
-    rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 30%,
-    rgba(255,255,255,0) 68%, rgba(255,255,255,0.22) 100%);
-  pointer-events: none;
-}
-:global(body.lamp-on) .navHome {
-  background: linear-gradient(180deg, rgba(255,255,255,0.42), rgba(255,255,255,0.16));
-}
-/* solid light outline (same technique as the sticker labels) keeps the logo/links
-   legible over both the tan and maroon sections showing through the glass — a
-   soft glow alone wasn't enough since maroon text on a white-lightened maroon
-   backdrop is a same-hue, low-contrast combination */
-.navHome .logo, .navHome .link {
-  text-shadow:
-    1px 1px 0 #FBEFE9,
-    -1px 1px 0 #FBEFE9,
-    1px -1px 0 #FBEFE9,
-    -1px -1px 0 #FBEFE9,
-    0 0 3px #FBEFE9,
-    0 0 9px rgba(251,239,233,0.95),
-    0 0 16px rgba(251,239,233,0.85);
-}
-.navHome .logo { color: var(--maroon); }
-.navHome .link { color: var(--midnight); opacity: 0.72; }
-.navHome .link:hover,
-.navHome .linkActive { color: var(--maroon); opacity: 1; }
