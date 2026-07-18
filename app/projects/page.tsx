@@ -1,35 +1,6 @@
 import type { Metadata } from "next";
-import { Noto_Sans_Devanagari, Space_Mono, Baloo_2, Space_Grotesk } from "next/font/google";
 import Footer from "@/components/Footer";
 import styles from "./projects.module.css";
-
-const notoDevanagari = Noto_Sans_Devanagari({
-  subsets: ["devanagari", "latin"],
-  weight: ["700"],
-  variable: "--font-noto-devanagari",
-  display: "swap",
-});
-
-const spaceMono = Space_Mono({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-space-mono",
-  display: "swap",
-});
-
-const baloo2 = Baloo_2({
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-  variable: "--font-baloo-2",
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Projects — Monika Vaishnav",
@@ -37,9 +8,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div
-      className={`theme-clay ${notoDevanagari.variable} ${spaceMono.variable} ${baloo2.variable} ${spaceGrotesk.variable}`}
-    >
+    <div>
       <div className={styles.pageHeader}>
         <h1 className="section-title">Projects</h1>
         <p className={styles.pageHeaderSub}>A selection of work across strategy, design, and technology.</p>
@@ -54,12 +23,7 @@ export default function ProjectsPage() {
             <a href="/work/makhana/" className={styles.projectThumbLink}>
               <div className={`${styles.projectThumb} ${styles.makhanaThumb}`}>
                 <div className={styles.makhanaThumbInner}>
-                  <div className={styles.mkLogoLockup}>
-                    <div className={styles.mkLogoBar} />
-                    <div className={styles.mkLogoWm}>
-                      <span className={styles.mkLogoDev}>म</span><span className={styles.mkLogoLat}>aka</span>
-                    </div>
-                  </div>
+                  <span className={styles.mkWordmark}>maka</span>
                   <span className={styles.makhanaThumbSub}>GTM CAMPAIGN · BRAND IDENTITY</span>
                 </div>
               </div>
@@ -76,7 +40,7 @@ export default function ProjectsPage() {
             <a href="/work/boat/" className={styles.projectThumbLink}>
               <div className={`${styles.projectThumb} ${styles.boatThumb}`}>
                 <div className={styles.boatThumbInner}>
-                  <span className={styles.boatThumbWord}>b<span className={styles.boatThumbWordO}>O</span>At</span>
+                  <span className={styles.boatThumbWord}>boAt</span>
                   <span className={styles.boatThumbTagline}>found in the quiet</span>
                   <span className={styles.boatThumbSub}>CAMPAIGN ANALYSIS</span>
                 </div>
