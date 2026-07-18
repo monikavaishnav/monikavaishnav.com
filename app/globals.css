@@ -1,0 +1,57 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* colours */
+  --blue: #2B2BFF;
+  --clay: #C05B3B;
+  --accent: var(--blue); /* overridden per-theme / per-section */
+  --dark: #211f1d;
+  --light-bg: #f0ede8;
+  --text: #211f1d;
+  --muted: #6b6258;
+
+  /* beach-house palette (home page colour blocks) */
+  --tan: #D8BA98;
+  --maroon: #7F0303;
+  --alabaster: #EFE8DF;
+  --lightblue: #96C0CE;
+  --midnight: #0F414A;
+
+  /* fonts — variables come from next/font in app/layout.tsx */
+  --font-display: var(--font-fraunces), Georgia, serif;   /* headings */
+  --font-text: var(--font-lora), Georgia, serif;          /* reading body */
+  --font-body: var(--font-inter), system-ui, sans-serif;  /* small UI labels */
+  --font-script: var(--font-caveat), cursive;             /* handwritten accents */
+  --font-script-alt: var(--font-dancing-script), var(--font-caveat), cursive;
+}
+
+/* Terracotta / clay alternative theme (Projects page) */
+.theme-clay {
+  --accent: var(--clay);
+  --light-bg: #f3ece2;
+  --muted: #7a6a5c;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+html, body {
+  max-width: 100vw;
+}
+
+body {
+  min-height: 100%;
+  color: var(--text);
+  background: #fff;
+  font-family: var(--font-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
