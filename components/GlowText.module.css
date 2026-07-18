@@ -1,0 +1,21 @@
+.glowWord {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 0.02em 0.14em;
+  margin: 0 -0.14em;
+  transition: background 0.16s ease, box-shadow 0.16s ease, color 0.16s ease;
+}
+
+.glowWord:hover {
+  background: radial-gradient(ellipse at center,
+    rgba(255, 226, 130, 0.95) 0%,
+    rgba(255, 219, 110, 0.55) 60%,
+    rgba(255, 219, 110, 0.12) 100%);
+  box-shadow: 0 0 12px 4px rgba(255, 214, 84, 0.6);
+  color: #2e2300 !important;
+}
+
+/* no hover glow on touch devices */
+@media (hover: none) {
+  .glowWord:hover { background: none; box-shadow: none; color: inherit !important; }
+}

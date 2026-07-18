@@ -52,3 +52,28 @@
   .links { gap: 0.9rem; }
   .link { font-size: 0.64rem; letter-spacing: 0.06em; }
 }
+
+/* ── Per-page navbar recolors (ported from the old body-class overrides:
+   .resume-page .navbar, .theme-clay .nav-logo, .makhana-page .navbar) ── */
+.navResume {
+  background: var(--alabaster);
+  border-bottom-color: rgba(15, 65, 74, 0.16);
+}
+.navResume .logo { color: var(--maroon); }
+.navResume .link { color: var(--midnight); opacity: 0.72; }
+.navResume .link:hover,
+.navResume .linkActive { color: var(--maroon); opacity: 1; }
+
+.navClay .logo { color: var(--clay); }
+
+.navMakhana {
+  background: #FFFCF0;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+.navMakhana .logo { color: #2B6B3E; }
+.navMakhana .link { color: #5a5240; }
+.navMakhana .link:hover,
+.navMakhana .linkActive { color: #2B6B3E; }
+
+/* Home page's "liquid glass" navbar is filled in with Phase 2 */
+.navHome {}

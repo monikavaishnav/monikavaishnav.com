@@ -10,11 +10,24 @@ const NAV_LINKS = [
   { href: "/resume", label: "Resume", newTab: true },
 ];
 
+// Each page had its own recolored navbar via a body class in the old site
+// (.home .navbar, .resume-page .navbar, .theme-clay .nav-logo, .makhana-page
+// .navbar, ...). Centralized here instead of scattered across 4 stylesheets —
+// boAt's pages never overrode the navbar, so they fall through to default.
+function getVariant(pathname: string): string {
+  if (pathname === "/") return styles.navHome;
+  if (pathname.startsWith("/resume")) return styles.navResume;
+  if (pathname.startsWith("/projects")) return styles.navClay;
+  if (pathname.startsWith("/work/makhana")) return styles.navMakhana;
+  return "";
+}
+
 export default function Navbar() {
   const pathname = usePathname();
+  const variant = getVariant(pathname);
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${styles.navbar} ${variant}`}>
       <Link href="/" className={styles.logo}>MV</Link>
       <ul className={styles.links}>
         {NAV_LINKS.map((item) => {

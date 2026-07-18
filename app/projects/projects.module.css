@@ -1,0 +1,213 @@
+.pageHeader {
+  padding: 4rem 4rem 2.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 3rem;
+}
+
+.pageHeaderSub {
+  font-family: var(--font-text);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.divider {
+  width: 100%;
+  height: 14px;
+  margin: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='14' viewBox='0 0 40 14'%3E%3Cpath d='M0 7 Q10 1 20 7 T40 7' fill='none' stroke='%23000000' stroke-opacity='0.22' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+.projectsPage {
+  padding: 3rem 4rem 5.5rem;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3.5rem 2.5rem;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.projectThumbLink { display: block; text-decoration: none; }
+.projectThumbLink:hover .projectThumb { opacity: 0.88; }
+
+.projectThumb {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: #d0cdc8;
+  overflow: hidden;
+  transition: opacity 0.2s;
+  display: flex !important;
+  align-items: flex-end;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.projectTag {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.projectTitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--dark);
+  line-height: 1.15;
+}
+
+.projectDesc {
+  font-family: var(--font-text);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+.projectLink {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dark);
+  text-decoration: none;
+  margin-top: 0.5rem;
+  transition: color 0.2s;
+}
+.projectLink:hover { color: var(--accent); }
+
+/* ── Makhana thumb (ported from makhana.css) ── */
+.makhanaThumb {
+  background: #F5C518;
+  position: relative;
+  overflow: hidden;
+}
+.makhanaThumb::before {
+  content: '';
+  position: absolute;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.05);
+  top: -70px; right: -70px;
+  pointer-events: none;
+}
+.makhanaThumb::after {
+  content: '';
+  position: absolute;
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0,0,0,0.1);
+  top: 24px; right: 28px;
+}
+.makhanaThumbInner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  position: relative;
+  z-index: 1;
+  padding: 0 0 1.8rem 1.8rem;
+  width: 100%;
+}
+.mkLogoLockup { position: relative; display: inline-block; }
+.mkLogoBar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3.5px;
+  background: #1A1A1A;
+  border-radius: 1px;
+}
+.mkLogoWm { display: flex; align-items: flex-start; padding-top: 9px; line-height: 1; }
+.mkLogoDev {
+  font-family: var(--font-noto-devanagari), sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  position: relative;
+  top: 3px;
+}
+.mkLogoLat {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  letter-spacing: -0.01em;
+}
+.makhanaThumbSub {
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.46rem;
+  letter-spacing: 0.24em;
+  color: rgba(0,0,0,0.38);
+  text-transform: uppercase;
+}
+
+/* ── boAt thumb (ported from boat.css) ── */
+.boatThumb {
+  background: #FBF1DC;
+  background-image: radial-gradient(circle, rgba(23,21,26,0.10) 1.6px, transparent 1.6px);
+  background-size: 18px 18px;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #17151A;
+}
+.boatThumb::before {
+  content: '★';
+  position: absolute; top: 18px; right: 22px;
+  font-size: 1.8rem; color: #FFC933; -webkit-text-stroke: 1.5px #17151A;
+  transform: rotate(10deg);
+}
+.boatThumbInner {
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: 0.55rem; position: relative; z-index: 1;
+  padding: 0 0 1.8rem 1.8rem; width: 100%;
+}
+.boatThumbWord {
+  font-family: var(--font-baloo-2), sans-serif;
+  font-weight: 800;
+  font-size: 2.2rem; letter-spacing: -0.01em; line-height: 1; color: #17151A;
+}
+.boatThumbWordO { color: #FF4136; }
+.boatThumbTagline {
+  font-family: var(--font-caveat), cursive;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #FF4136;
+  line-height: 1;
+}
+.boatThumbSub {
+  font-family: var(--font-space-grotesk), sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.18em; color: #17151A; opacity: 0.65; text-transform: uppercase;
+  background: #FF4FA3; padding: 0.2em 0.6em; border-radius: 999px; border: 2px solid #17151A;
+}
+
+@media (max-width: 900px) {
+  .projectsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .projectsGrid { grid-template-columns: 1fr; }
+  .pageHeader { flex-direction: column; gap: 0.5rem; padding: 2.5rem 1.5rem 1.5rem; }
+  .projectsPage { padding: 2rem 1.5rem 4rem; }
+}
