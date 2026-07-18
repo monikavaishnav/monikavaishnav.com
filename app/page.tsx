@@ -1,3 +1,4 @@
+import Image from "next/image";
 import PortraitHero from "@/components/PortraitHero";
 import SkillsRotator from "@/components/SkillsRotator";
 import GlowText from "@/components/GlowText";
@@ -34,8 +35,7 @@ export default function Home() {
           <div className={styles.introPhotoWrap}>
             <div className={styles.stampFrame}>
               <div className={styles.stampPhoto}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/hero-photo.png" alt="Monika Vaishnav" className={styles.introPhoto} />
+                <Image src="/assets/hero-photo.png" alt="Monika Vaishnav" fill className={styles.introPhoto} sizes="(max-width: 768px) 70vw, 400px" />
               </div>
             </div>
             <svg className={styles.frameSprig} viewBox="0 0 120 210" fill="none" aria-hidden="true">
@@ -86,8 +86,7 @@ export default function Home() {
           <div className={styles.skillsPhoto}>
             <div className={styles.stampFrame}>
               <div className={`${styles.stampPhoto} ${styles.stampPhotoTall}`}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/skills-photo.png" alt="Monika at work" />
+                <Image src="/assets/skills-photo.png" alt="Monika at work" fill sizes="(max-width: 768px) 80vw, 400px" />
               </div>
             </div>
             <svg className={`${styles.frameSprig} ${styles.frameSprigSkills}`} viewBox="0 0 120 210" fill="none" aria-hidden="true">
@@ -159,8 +158,7 @@ export default function Home() {
       {/* SOCIAL MEDIA */}
       <section className={styles.socialSection} id="connect">
         <div className={styles.socialAvatar}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/social-photo.png" alt="Monika" />
+          <Image src="/assets/social-photo.png" alt="Monika" fill sizes="170px" />
         </div>
         <h2 className={styles.socialHeading}>
           <GlowText>

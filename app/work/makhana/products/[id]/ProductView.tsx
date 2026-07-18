@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { CSSProperties } from "react";
+import Image from "next/image";
 import type { Product } from "@/lib/products";
 import styles from "./product.module.css";
 
@@ -53,12 +54,13 @@ export default function ProductView({ product }: { product: Product }) {
             </button>
           </div>
           <div className={styles.pdpImgWrap}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={pkgData.img}
               alt={`${product.name} — ${pkg === "regular" ? "Everyday Pouch" : "Premium Jar"}`}
               className={styles.pdpImg}
               style={imgStyle}
+              fill
+              sizes="(max-width: 900px) 100vw, 50vw"
             />
           </div>
         </div>

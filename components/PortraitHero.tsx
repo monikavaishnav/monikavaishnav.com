@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import styles from "./PortraitHero.module.css";
 
 export default function PortraitHero() {
@@ -71,34 +72,32 @@ export default function PortraitHero() {
       </button>
 
       <div className={`${styles.stickerScene} ${popped ? styles.popped : ""}`}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           ref={portraitRef}
           src="/assets/portrait-sticker.png"
           alt="Monika Vaishnav"
           className={styles.portraitImg}
+          width={1792}
+          height={2390}
+          priority
           onClick={handlePortraitClick}
           onAnimationEnd={() => portraitRef.current?.classList.remove(styles.bounce)}
         />
 
         <a href="#work" className={`${styles.sticker} ${styles.stickerCamera}`}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/sticker-camera.png" alt="Works" />
+          <Image src="/assets/sticker-camera.png" alt="Works" width={736} height={736} />
           <span className={styles.stickerLabel}>Works</span>
         </a>
         <a href="#about" className={`${styles.sticker} ${styles.stickerSunflowers}`}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/sticker-sunflowers.png" alt="About me" />
+          <Image src="/assets/sticker-sunflowers.png" alt="About me" width={495} height={664} />
           <span className={styles.stickerLabel}>About Me</span>
         </a>
         <a href="/resume/" className={`${styles.sticker} ${styles.stickerJournal}`}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/sticker-journal.png" alt="Resume" />
+          <Image src="/assets/sticker-journal.png" alt="Resume" width={736} height={736} />
           <span className={styles.stickerLabel}>Resume</span>
         </a>
         <a href="#connect" className={`${styles.sticker} ${styles.stickerTelephone}`}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/sticker-telephone.png" alt="Let's connect" />
+          <Image src="/assets/sticker-telephone.png" alt="Let's connect" width={736} height={736} />
           <span className={styles.stickerLabel}>Let&apos;s Connect</span>
         </a>
       </div>
