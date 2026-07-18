@@ -1,5 +1,4 @@
 import Image from "next/image";
-import PortraitHero from "@/components/PortraitHero";
 import SkillsRotator from "@/components/SkillsRotator";
 import GlowText from "@/components/GlowText";
 import styles from "./home.module.css";
@@ -7,8 +6,6 @@ import styles from "./home.module.css";
 export default function Home() {
   return (
     <>
-      <PortraitHero />
-
       {/* HERO / ABOUT */}
       <section className={styles.introHero} id="about">
         <div className={styles.introLeft}>
@@ -20,11 +17,8 @@ export default function Home() {
           <p className={styles.introBrand}><span className={styles.hlBox}>...and this is my brand.</span></p>
           <p className={styles.introPositioning}>Brand strategist &amp; story-first thinker —<br />building brands people actually feel something for.</p>
           <div className={styles.introBio}>
-            <p>I started in a field far from business, which turned out to be the best thing that ever happened to my career. That path gave me a different lens: one that&apos;s curious, creative, and never content with the obvious answer.</p>
-            <p>I pursued my MBA to bring rigour to that curiosity, and somewhere between consumer research and brand campaigns, I found my sweet spot: <strong className={styles.hlMarker}>building brands that people actually feel something for.</strong></p>
-            <p>I&apos;m drawn to FMCG and fashion &amp; lifestyle brands because they live closest to culture. The best ones don&apos;t just sell products. They tell stories, shift behaviours, and become part of people&apos;s identities.</p>
-            <p>This portfolio is a window into how I think, what I build, and the kind of work that excites me.</p>
-            <p>Thanks for stopping by, and I&apos;d love to make something great together!</p>
+            <p>I started in a field far from business — pharmaceutical sciences — which turned out to be the best thing that ever happened to my career. It gave me a curious, research-first lens, and an MBA later gave that curiosity rigour. Somewhere between consumer research and brand campaigns, I found my sweet spot: <strong className={styles.hlMarker}>building brands that people actually feel something for.</strong></p>
+            <p>I&apos;m drawn to FMCG and fashion &amp; lifestyle brands because they live closest to culture — the best ones don&apos;t just sell products, they shift behaviours and become part of people&apos;s identities. Thanks for stopping by; I&apos;d love to make something great together.</p>
           </div>
           <a href="/projects/" className={styles.introArrow}>
             <span className={styles.introCtaNote}>peek at my work</span>
@@ -33,41 +27,16 @@ export default function Home() {
         </div>
         <div className={styles.introRight}>
           <div className={styles.introPhotoWrap}>
-            <div className={styles.stampFrame}>
-              <div className={styles.stampPhoto}>
+            <div className={styles.goldFrame}>
+              <div className={styles.framePhoto}>
                 <Image src="/assets/hero-photo.png" alt="Monika Vaishnav" fill className={styles.introPhoto} sizes="(max-width: 768px) 70vw, 400px" />
               </div>
             </div>
-            <svg className={styles.frameSprig} viewBox="0 0 120 210" fill="none" aria-hidden="true">
-              <g stroke="#7e9b6b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M60 58 C57 100 64 150 59 206" />
-                <path d="M60 112 C44 104 35 108 30 97" />
-                <path d="M59 150 C76 142 85 146 90 134" />
-              </g>
-              <g fill="#8a5fa6" fillOpacity="0.5" stroke="#6f4a8f" strokeWidth="2.6" strokeLinejoin="round">
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(60 60 54)" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(120 60 54)" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(180 60 54)" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(240 60 54)" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(300 60 54)" />
-              </g>
-              <circle cx="60" cy="54" r="5" fill="#caa54e" />
-            </svg>
-            <svg className={`${styles.frameSprig} ${styles.frameSprigAccent}`} viewBox="0 0 120 210" fill="none" aria-hidden="true">
-              <g stroke="#7e9b6b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M60 58 C57 100 64 150 59 206" />
-                <path d="M59 130 C76 122 85 126 90 114" />
-              </g>
-              <g fill="#b98ac9" fillOpacity="0.5" stroke="#6f4a8f" strokeWidth="2.6" strokeLinejoin="round">
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(60 60 54)" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(120 60 54)" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(180 60 54)" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(240 60 54)" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(300 60 54)" />
-              </g>
-              <circle cx="60" cy="54" r="5" fill="#caa54e" />
+            <svg className={styles.goldSprig} viewBox="0 0 120 210" fill="none" aria-hidden="true">
+              <path d="M60 58 C57 100 64 150 59 206" stroke="var(--gold)" strokeWidth="2" strokeLinecap="round" />
+              <path d="M60 112 C44 104 35 108 30 97" stroke="var(--gold)" strokeWidth="2" strokeLinecap="round" />
+              <path d="M59 150 C76 142 85 146 90 134" stroke="var(--gold)" strokeWidth="2" strokeLinecap="round" />
+              <circle cx="60" cy="54" r="4" fill="var(--gold)" />
             </svg>
           </div>
         </div>
@@ -84,29 +53,13 @@ export default function Home() {
           </p>
           <h2 className={`section-title ${styles.skillsHeading}`}><GlowText>What I<br />Do Best</GlowText></h2>
           <div className={styles.skillsPhoto}>
-            <div className={styles.stampFrame}>
-              <div className={`${styles.stampPhoto} ${styles.stampPhotoTall}`}>
+            <div className={styles.goldFrame}>
+              <div className={`${styles.framePhoto} ${styles.framePhotoTall}`}>
                 <Image src="/assets/skills-photo.png" alt="Monika at work" fill sizes="(max-width: 768px) 80vw, 400px" />
               </div>
             </div>
-            <svg className={`${styles.frameSprig} ${styles.frameSprigSkills}`} viewBox="0 0 120 210" fill="none" aria-hidden="true">
-              <g stroke="#7e9b6b" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M60 58 C57 100 64 150 59 206" />
-                <path d="M60 112 C44 104 35 108 30 97" />
-                <path d="M59 150 C76 142 85 146 90 134" />
-              </g>
-              <g fill="#8a5fa6" fillOpacity="0.5" stroke="#6f4a8f" strokeWidth="2.6" strokeLinejoin="round">
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(60 60 54)" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(120 60 54)" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(180 60 54)" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(240 60 54)" />
-                <path d="M60 54 C52 40 52 25 60 19 C68 25 68 40 60 54 Z" transform="rotate(300 60 54)" />
-              </g>
-              <circle cx="60" cy="54" r="5" fill="#caa54e" />
-            </svg>
           </div>
-          <p className={styles.skillsNote}><GlowText>a head full of ideas, always brewing :)</GlowText></p>
+          <p className={styles.skillsNote}>a head full of ideas, always brewing :)</p>
         </div>
         <div className={styles.skillsRight}>
           <SkillsRotator />
@@ -161,10 +114,8 @@ export default function Home() {
           <Image src="/assets/social-photo.png" alt="Monika" fill sizes="170px" />
         </div>
         <h2 className={styles.socialHeading}>
-          <GlowText>
-            <span className={styles.socialHeadingBold}>Social</span>
-            <em className={styles.socialHeadingItalic}> media is kinda my thing</em>
-          </GlowText>
+          <span className={styles.socialHeadingBold}>Social</span>
+          <em className={styles.socialHeadingItalic}> media is kinda my thing</em>
         </h2>
         <div className={styles.socialIcons}>
 
@@ -198,18 +149,16 @@ export default function Home() {
       {/* CONTACT */}
       <section className={styles.contact}>
         <div className={styles.contactInner}>
-          <h2 className={`section-title ${styles.contactTitle}`}><GlowText>Let&apos;s<br />Connect</GlowText></h2>
+          <h2 className={`section-title ${styles.contactTitle}`}>Let&apos;s<br />Connect</h2>
           <p className={styles.contactText}>
-            <GlowText>
-              Open to freelance projects, full time roles, and creative collaborations.
-              Drop me a line, I&apos;d love to chat.
-            </GlowText>
+            Open to freelance projects, full time roles, and creative collaborations.
+            Drop me a line, I&apos;d love to chat.
           </p>
           <a href="mailto:monikavaishnav.mba@gmail.com" className={styles.contactEmail}>
             MONIKAVAISHNAV.MBA@GMAIL.COM
           </a>
         </div>
-        <p className={styles.contactNote}><GlowText>made with love :)</GlowText></p>
+        <p className={styles.contactNote}>made with love :)</p>
         <div className={styles.contactFooter}>
           <span>© 2026 MONIKA VAISHNAV</span>
           <span>@MONIKAVAISHNAV</span>
