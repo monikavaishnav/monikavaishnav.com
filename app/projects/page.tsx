@@ -20,7 +20,7 @@ export default function ProjectsPage() {
         <div className={styles.projectsGrid}>
 
           <article className={styles.projectCard}>
-            <a href="/work/makhana/" className={styles.projectThumbLink}>
+            <a href="https://maka.monikavaishnav.com/" className={styles.projectThumbLink}>
               <div className={`${styles.projectThumb} ${styles.makhanaThumb}`}>
                 <div className={styles.makhanaThumbInner}>
                   <span className={styles.mkWordmark}>maka</span>
@@ -32,7 +32,7 @@ export default function ProjectsPage() {
               <span className={styles.projectTag}>GTM STRATEGY · BRAND CAMPAIGN</span>
               <h2 className={styles.projectTitle}>Makhana Brand Launch</h2>
               <p className={styles.projectDesc}>Built a full go to market strategy and brand campaign for a healthy snacking brand&apos;s Makhana product line, from market research and positioning to creative execution.</p>
-              <a href="/work/makhana/" className={styles.projectLink}>VIEW PROJECT →</a>
+              <a href="https://maka.monikavaishnav.com/" className={styles.projectLink}>VIEW PROJECT →</a>
             </div>
           </article>
 

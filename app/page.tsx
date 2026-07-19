@@ -77,10 +77,10 @@ export default function Home() {
         </div>
         <div className={styles.featuredCards}>
 
-          <a href="/work/makhana/" className={styles.fwCard}>
+          <a href="https://maka.monikavaishnav.com/" className={styles.fwCard}>
             <div className={`${styles.fwThumb} ${styles.fwThumbMaka}`}>
               <div className={styles.fwPreview}>
-                <iframe src="/work/makhana/" title="Makhana Brand Launch — live preview" loading="lazy" tabIndex={-1} aria-hidden="true" />
+                <iframe src="https://maka.monikavaishnav.com/" title="Makhana Brand Launch — live preview" loading="lazy" tabIndex={-1} aria-hidden="true" />
               </div>
             </div>
             <div className={styles.fwInfo}>

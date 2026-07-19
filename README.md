@@ -37,15 +37,14 @@ app/                    Routes (App Router)
   page.tsx              Home
   projects/              /projects
   resume/                 /resume
-  work/makhana/           /work/makhana — Makhana case study
-    products/[id]/         /work/makhana/products/<id> — product detail pages
   work/boat/               /work/boat — boAt case study
   globals.css            Design tokens (colors, fonts) + base reset
   layout.tsx              Root layout, fonts (next/font), shared <Navbar/>
 components/             Shared components (Navbar, Footer, PortraitHero, etc.)
-lib/products.ts         Typed product data for the Makhana product pages
 public/assets/          Images, video, PDF — served as-is
 ```
+
+Other projects (like the Makhana case study, at [maka.monikavaishnav.com](https://maka.monikavaishnav.com)) are deployed as their own standalone sites under a subdomain, and just linked to from here — not embedded in this repo.
 
 Each route's styles live in a co-located CSS Module (`*.module.css`) next to its `page.tsx`.
 

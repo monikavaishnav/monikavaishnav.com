@@ -52,14 +52,3 @@
   .links { gap: 0.9rem; }
   .link { font-size: 0.64rem; letter-spacing: 0.06em; }
 }
-
-/* ── Makhana keeps its own distinct navbar (separate branded project,
-   out of scope for the portfolio revamp) ── */
-.navMakhana {
-  background: #FFFCF0;
-  border-bottom-color: rgba(0, 0, 0, 0.1);
-}
-.navMakhana .logo { color: #2B6B3E; }
-.navMakhana .link { color: #5a5240; }
-.navMakhana .link:hover,
-.navMakhana .linkActive { color: #2B6B3E; }
