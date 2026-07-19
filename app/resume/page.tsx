@@ -171,7 +171,7 @@ export default function ResumePage() {
             </div>
             <ul className={styles.rsList}>
               <li><strong>Content Marketing — Pinterest:</strong> Built and manage a Pinterest account generating 3 lakh+ monthly views through organic, SEO-driven pin content.</li>
-              <li><strong><a href="/work/makhana/">Makhana Brand Campaign ↗</a>:</strong> Extended marketing campaign for the D2C Makhana brand from my SIP, building on the go-to-market strategy with content and promotion ideas.</li>
+              <li><strong><a href="https://maka.monikavaishnav.com/" target="_blank" rel="noopener">Makhana Brand Campaign ↗</a>:</strong> Extended marketing campaign for the D2C Makhana brand from my SIP, building on the go-to-market strategy with content and promotion ideas.</li>
             </ul>
           </div>
         </section>
