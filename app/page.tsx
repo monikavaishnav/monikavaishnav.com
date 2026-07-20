@@ -1,44 +1,42 @@
 import Image from "next/image";
 import SkillsRotator from "@/components/SkillsRotator";
 import GlowText from "@/components/GlowText";
+import HashScroll from "@/components/HashScroll";
 import styles from "./home.module.css";
 
 export default function Home() {
   return (
     <>
-      {/* HERO / ABOUT */}
-      <section className={styles.introHero} id="about">
-        <div className={styles.introLeft}>
-          <span className={styles.introHi}>
-            <GlowText>Hi!</GlowText>{" "}
-            <svg className={styles.doodle} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0Z" fill="currentColor" /></svg>
-          </span>
-          <h1 className={styles.introName}><GlowText>I&apos;m <span className={styles.introNameAccent}>Monika</span></GlowText></h1>
-          <p className={styles.introBrand}><span className={styles.hlBox}>...and this is my brand.</span></p>
-          <p className={styles.introPositioning}>Brand strategist &amp; story-first thinker —<br />building brands people actually feel something for.</p>
-          <div className={styles.introBio}>
-            <p>I started in a field far from business — pharmaceutical sciences — which turned out to be the best thing that ever happened to my career. It gave me a curious, research-first lens, and an MBA later gave that curiosity rigour. Somewhere between consumer research and brand campaigns, I found my sweet spot: <strong className={styles.hlMarker}>building brands that people actually feel something for.</strong></p>
-            <p>I&apos;m drawn to FMCG and fashion &amp; lifestyle brands because they live closest to culture — the best ones don&apos;t just sell products, they shift behaviours and become part of people&apos;s identities. Thanks for stopping by; I&apos;d love to make something great together.</p>
-          </div>
+      <HashScroll />
+      {/* HERO */}
+      <section className={styles.introHero}>
+        <div className={styles.heroIntro}>
+          <h1 className={styles.heroHeadline}>
+            <span className={styles.heroWave} aria-hidden="true">👋</span>{" "}
+            <span className={styles.heroHi}><GlowText>Hi!</GlowText></span>{" "}
+            <GlowText>I&apos;m</GlowText>{" "}
+            <span className={styles.heroPhotoOuter}>
+              <span className={styles.heroPhotoWrap}>
+                <Image src="/assets/hero-photo.png" alt="Monika Vaishnav" fill className={styles.heroPhoto} sizes="92px" />
+              </span>
+              <svg className={styles.heroDoodle} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C13 8 16 11 24 12 16 13 13 16 12 24 11 16 8 13 0 12 8 11 11 8 12 0Z" fill="currentColor" /></svg>
+            </span>{" "}
+            <span className={styles.heroName}><GlowText>Monika</GlowText></span>
+          </h1>
+
+          <p className={styles.heroTagline}>
+            <GlowText>📌 Pinterest creator, 💃 Kathak dancer, 🧘 yoga enthusiast, but most importantly: 🧠 story-first brand strategist.</GlowText>
+          </p>
+
+          <ul className={styles.heroFacts}>
+            <li><span className={styles.heroFactHeart} aria-hidden="true">♡</span> Based in Bengaluru, Karnataka</li>
+            <li><span className={styles.heroFactHeart} aria-hidden="true">♡</span> MBA — Marketing, ICFAI Business School (2027)</li>
+          </ul>
+
           <a href="/projects/" className={styles.introArrow}>
             <span className={styles.introCtaNote}>peek at my work</span>
             <span className={styles.introArrowMark}>→</span>
           </a>
-        </div>
-        <div className={styles.introRight}>
-          <div className={styles.introPhotoWrap}>
-            <div className={styles.goldFrame}>
-              <div className={styles.framePhoto}>
-                <Image src="/assets/hero-photo.png" alt="Monika Vaishnav" fill className={styles.introPhoto} sizes="(max-width: 768px) 70vw, 400px" />
-              </div>
-            </div>
-            <svg className={styles.goldSprig} viewBox="0 0 120 210" fill="none" aria-hidden="true">
-              <path d="M60 58 C57 100 64 150 59 206" stroke="var(--gold)" strokeWidth="2" strokeLinecap="round" />
-              <path d="M60 112 C44 104 35 108 30 97" stroke="var(--gold)" strokeWidth="2" strokeLinecap="round" />
-              <path d="M59 150 C76 142 85 146 90 134" stroke="var(--gold)" strokeWidth="2" strokeLinecap="round" />
-              <circle cx="60" cy="54" r="4" fill="var(--gold)" />
-            </svg>
-          </div>
         </div>
       </section>
 
@@ -147,7 +145,7 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section className={styles.contact}>
+      <section className={styles.contact} id="contact">
         <div className={styles.contactInner}>
           <h2 className={`section-title ${styles.contactTitle}`}>Let&apos;s<br />Connect</h2>
           <p className={styles.contactText}>

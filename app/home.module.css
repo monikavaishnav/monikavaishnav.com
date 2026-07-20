@@ -10,91 +10,107 @@
 }
 .hlMarkerDark { color: var(--ink); }
 
-.hlBox {
-  position: relative;
-  display: inline-block;
-}
-.hlBox::before {
-  content: '';
-  position: absolute;
-  inset: -0.35em -0.55em;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60' preserveAspectRatio='none' fill='none'%3E%3Cpath d='M4 10 Q50 4 100 7 Q150 4 196 10' stroke='%23C9A25E' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M4 50 Q50 56 100 53 Q150 56 196 50' stroke='%23C9A25E' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M7 8 Q3 30 6 52' stroke='%23C9A25E' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M193 8 Q197 30 194 52' stroke='%23C9A25E' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  pointer-events: none;
-}
-
-/* sparkle next to "Hi!" */
+/* sparkle doodle, now used next to the inline hero photo */
 .doodle { color: var(--moss); display: inline-block; vertical-align: middle; pointer-events: none; }
-.introHi .doodle { width: 0.55em; height: 0.55em; margin-left: 0.1em; vertical-align: 0.35em; }
 
-/* ── 1 · INTRO (About) ── */
+/* ── 1 · INTRO ── */
 .introHero {
   background: var(--paper);
   position: relative;
   overflow: visible;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: start;
-  padding: 4rem 4rem 3rem;
-  gap: 2rem;
-  min-height: 88vh;
+  padding: 5rem 4rem 3.5rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-.introLeft {
+.heroIntro {
   display: flex;
   flex-direction: column;
   gap: 0;
-  padding-right: 2rem;
+  max-width: 760px;
 }
 
-/* the one signature handwritten touch on this page */
-.introHi {
-  font-family: var(--font-script);
-  font-size: clamp(2.6rem, 5vw, 3.4rem);
-  font-weight: 700;
-  color: var(--moss);
-  line-height: 1;
-  margin-bottom: 0;
-}
-
-.introName {
+.heroHeadline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.28em 0.32em;
   font-family: var(--font-display);
   font-optical-sizing: auto;
   font-weight: 600;
-  font-size: clamp(3rem, 6vw, 5rem);
-  line-height: 0.98;
-  letter-spacing: -0.025em;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
   color: var(--ink);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
 }
-.introNameAccent { color: var(--moss); font-style: italic; font-weight: 500; }
 
-.introBrand {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-style: italic;
-  font-weight: 400;
+.heroWave {
+  display: inline-block;
+  animation: heroWave 2.4s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+@keyframes heroWave {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+}
+
+.heroHi { color: var(--blush); font-weight: 700; }
+.heroName { font-weight: 700; }
+
+.heroPhotoOuter {
+  position: relative;
+  display: inline-flex;
+  width: clamp(48px, 5.5vw, 84px);
+  height: clamp(48px, 5.5vw, 84px);
+  vertical-align: middle;
+}
+
+.heroPhotoWrap {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--gold);
+  background: var(--paper-alt);
+}
+
+.heroPhoto { object-fit: cover; object-position: top center; }
+
+.heroDoodle {
+  position: absolute;
+  top: -0.5em;
+  right: -0.55em;
+  width: 0.85em;
+  height: 0.85em;
+  color: var(--gold);
+  pointer-events: none;
+}
+
+.heroTagline {
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.7;
   color: var(--ink);
-  opacity: 0.85;
+  max-width: 640px;
+  margin-bottom: 1.2rem;
+}
+
+.heroFacts {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
   margin-bottom: 2rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
 }
-
-.introPositioning {
-  font-family: var(--font-display);
-  font-size: clamp(1rem, 1.8vw, 1.28rem);
-  font-style: italic;
-  font-weight: 500;
-  color: var(--moss);
-  line-height: 1.5;
-  margin-bottom: 1.8rem;
-  padding-left: 1.1rem;
-  border-left: 3px solid var(--gold);
-}
-
-.introBio { display: flex; flex-direction: column; gap: 1.1rem; margin-bottom: 2.5rem; }
-.introBio p { font-size: 1.05rem; line-height: 1.8; color: var(--ink); }
-.introBio strong { font-weight: 600; color: var(--moss); }
+.heroFactHeart { color: var(--gold); margin-right: 0.4em; }
 
 .introArrow {
   display: inline-flex;
@@ -104,7 +120,6 @@
   color: var(--moss);
   text-decoration: none;
   transition: transform 0.2s, color 0.2s;
-  margin-top: auto;
 }
 .introArrow:hover { transform: translateX(4px); }
 .introArrowMark { font-size: 2rem; line-height: 1; }
@@ -116,58 +131,9 @@
   text-transform: uppercase;
 }
 
-.introRight {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding-top: 1rem;
-}
-
-.introPhotoWrap {
-  width: 100%;
-  max-width: 400px;
-  position: relative;
-  transform: rotate(-2deg);
-  filter: drop-shadow(0 14px 26px rgba(42, 38, 32, 0.16));
-}
-
-/* thin gold-line frame, replaces the old postage-stamp perforated mask */
-.goldFrame {
-  padding: 10px;
-  background: var(--paper);
-  border: 1.5px solid var(--gold);
-}
-
-.framePhoto {
-  position: relative;
-  aspect-ratio: 3/4;
-  overflow: hidden;
-  background: var(--paper-alt);
-}
-.framePhotoTall { aspect-ratio: 3/4; background: var(--paper-alt); }
-
-.introPhoto { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
-
-/* the one botanical motif left on the page */
-.goldSprig {
-  position: absolute;
-  width: 72px;
-  right: -12px;
-  bottom: -20px;
-  transform: rotate(-10deg);
-  z-index: 3;
-  pointer-events: none;
-}
-
 @media (max-width: 768px) {
-  .goldSprig { width: 52px; right: -6px; bottom: -14px; }
-}
-
-@media (max-width: 768px) {
-  .introHero { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; min-height: auto; }
-  .introLeft { padding-right: 0; }
-  .introRight { order: -1; justify-content: center; }
-  .introPhotoWrap { max-width: 280px; }
+  .introHero { padding: 2.5rem 1.5rem; }
+  .heroHeadline { gap: 0.22em 0.26em; }
 }
 
 /* ── 3 · SKILLS ── */
@@ -193,6 +159,21 @@
   filter: drop-shadow(0 14px 26px rgba(42, 38, 32, 0.18));
 }
 .skillsPhoto img { width: 100%; height: 100%; object-fit: contain; object-position: bottom center; display: block; }
+
+/* thin gold-line frame around the Skills photo */
+.goldFrame {
+  padding: 10px;
+  background: var(--paper);
+  border: 1.5px solid var(--gold);
+}
+
+.framePhoto {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: var(--paper-alt);
+}
+.framePhotoTall { aspect-ratio: 3/4; background: var(--paper-alt); }
 
 .skillsNote {
   font-family: var(--font-display);
