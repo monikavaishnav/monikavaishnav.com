@@ -146,6 +146,49 @@
   text-transform: uppercase;
 }
 
+/* ── Carmesi thumb ── */
+.carmesiThumb {
+  background: radial-gradient(circle at 15% 10%, rgba(200, 30, 58, 0.35), transparent 45%),
+    radial-gradient(circle at 90% 85%, rgba(232, 163, 61, 0.18), transparent 45%), #1B0A0F;
+  position: relative;
+  overflow: hidden;
+}
+.carmesiThumb::before {
+  content: '';
+  position: absolute;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(232, 163, 61, 0.25);
+  top: -60px; right: -60px;
+  pointer-events: none;
+}
+.carmesiThumbInner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  position: relative;
+  z-index: 1;
+  padding: 0 0 1.8rem 1.8rem;
+  width: 100%;
+}
+.carmesiWordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+.carmesiThumbSub {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  color: #E8A33D;
+  text-transform: uppercase;
+}
+
 /* ── boAt thumb ── */
 .boatThumb {
   background: #FBF1DC;

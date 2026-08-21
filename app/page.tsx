@@ -89,6 +89,20 @@ export default function Home() {
             </div>
           </a>
 
+          <a href="https://mycarmesi.monikavaishnav.com/" className={styles.fwCard}>
+            <div className={`${styles.fwThumb} ${styles.fwThumbCarmesi}`}>
+              <div className={styles.fwPreview}>
+                <iframe src="https://mycarmesi.monikavaishnav.com/" title="Carmesi — Not Her Job — live preview" loading="lazy" tabIndex={-1} aria-hidden="true" />
+              </div>
+            </div>
+            <div className={styles.fwInfo}>
+              <span className={styles.fwTag}>Brand Strategy · Social Campaign</span>
+              <h3 className={styles.fwTitle}>Carmesi — Not Her Job</h3>
+              <p className={styles.fwDesc}>An interactive Instagram takeover concept for Carmesi&apos;s #NotHerJob campaign — nine posts imagined post by post, built to pull men into a conversation the brand has never had with them.</p>
+              <span className={styles.fwLink}>VIEW PROJECT →</span>
+            </div>
+          </a>
+
           <a href="/work/boat/" className={styles.fwCard}>
             <div className={`${styles.fwThumb} ${styles.fwThumbBoat}`}>
               <div className={styles.fwPreview}>

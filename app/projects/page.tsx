@@ -37,6 +37,23 @@ export default function ProjectsPage() {
           </article>
 
           <article className={styles.projectCard}>
+            <a href="https://mycarmesi.monikavaishnav.com/" className={styles.projectThumbLink}>
+              <div className={`${styles.projectThumb} ${styles.carmesiThumb}`}>
+                <div className={styles.carmesiThumbInner}>
+                  <span className={styles.carmesiWordmark}>Not Her Job</span>
+                  <span className={styles.carmesiThumbSub}>SOCIAL CAMPAIGN · INSTAGRAM TAKEOVER</span>
+                </div>
+              </div>
+            </a>
+            <div className={styles.projectInfo}>
+              <span className={styles.projectTag}>BRAND STRATEGY · SOCIAL CAMPAIGN</span>
+              <h2 className={styles.projectTitle}>Carmesi — Not Her Job</h2>
+              <p className={styles.projectDesc}>An interactive Instagram takeover concept for Carmesi&apos;s #NotHerJob campaign — nine posts imagined post by post, built to pull men into a conversation the brand has never had with them.</p>
+              <a href="https://mycarmesi.monikavaishnav.com/" className={styles.projectLink}>VIEW PROJECT →</a>
+            </div>
+          </article>
+
+          <article className={styles.projectCard}>
             <a href="/work/boat/" className={styles.projectThumbLink}>
               <div className={`${styles.projectThumb} ${styles.boatThumb}`}>
                 <div className={styles.boatThumbInner}>

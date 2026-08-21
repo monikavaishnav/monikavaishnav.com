@@ -262,6 +262,7 @@
   flex-shrink: 0;
 }
 .fwThumbMaka { background: #F5C518; }
+.fwThumbCarmesi { background: radial-gradient(circle at 15% 10%, rgba(200, 30, 58, 0.5), transparent 55%), #1B0A0F; }
 .fwThumbBoat { background: linear-gradient(160deg, #17171B, #0C0C0E); }
 
 .fwPreview { position: relative; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
