@@ -89,10 +89,10 @@ export default function Home() {
             </div>
           </a>
 
-          <a href="https://mycarmesi.monikavaishnav.com/" className={styles.fwCard}>
+          <a href="/work/carmesi/" className={styles.fwCard}>
             <div className={`${styles.fwThumb} ${styles.fwThumbCarmesi}`}>
               <div className={styles.fwPreview}>
-                <iframe src="https://mycarmesi.monikavaishnav.com/" title="Carmesi — Not Her Job — live preview" loading="lazy" tabIndex={-1} aria-hidden="true" />
+                <iframe src="/work/carmesi/" title="Carmesi — Not Her Job — live preview" loading="lazy" tabIndex={-1} aria-hidden="true" />
               </div>
             </div>
             <div className={styles.fwInfo}>
