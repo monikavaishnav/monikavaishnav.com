@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Footer from "@/components/Footer";
 import styles from "./projects.module.css";
 
@@ -22,6 +23,13 @@ export default function ProjectsPage() {
           <article className={styles.projectCard}>
             <a href="https://maka.monikavaishnav.com/" className={styles.projectThumbLink}>
               <div className={`${styles.projectThumb} ${styles.makhanaThumb}`}>
+                <Image
+                  src="/maka/thumb.jpg"
+                  alt="माka Himalayan Pink Salt makhana jar"
+                  fill
+                  sizes="(max-width: 900px) 50vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                />
                 <div className={styles.makhanaThumbInner}>
                   <span className={styles.mkWordmark}>maka</span>
                   <span className={styles.makhanaThumbSub}>GTM CAMPAIGN · BRAND IDENTITY</span>

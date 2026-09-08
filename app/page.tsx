@@ -77,9 +77,13 @@ export default function Home() {
 
           <a href="https://maka.monikavaishnav.com/" className={styles.fwCard}>
             <div className={`${styles.fwThumb} ${styles.fwThumbMaka}`}>
-              <div className={styles.fwPreview}>
-                <iframe src="https://maka.monikavaishnav.com/" title="Makhana Brand Launch — live preview" loading="lazy" tabIndex={-1} aria-hidden="true" />
-              </div>
+              <Image
+                src="/maka/thumb.jpg"
+                alt="माka Himalayan Pink Salt makhana jar"
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
+                style={{ objectFit: "cover" }}
+              />
             </div>
             <div className={styles.fwInfo}>
               <span className={styles.fwTag}>GTM Strategy · Brand Campaign</span>
